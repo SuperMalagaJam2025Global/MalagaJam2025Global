@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 836eb7fe6536b7f46bcccdc86500ea7e
+guid: 127fc1d90041b154285502674f3dc651
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pajita_0
+      name: coralBueno_0
       rect:
         serializedVersion: 2
-        x: 310
-        y: 221
-        width: 596
-        height: 676
+        x: 1
+        y: 3
+        width: 232
+        height: 165
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2696fe9c22222c94995ff8943c14731e
-      internalID: -1325968722
+      spriteID: 4dd53778bc3f03a4683977013ac4ffea
+      internalID: 578533154
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pajita_0: -1325968722
+      coralBueno_0: 578533154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
