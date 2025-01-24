@@ -3,39 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
+using Unity.VisualScripting;
 
 // This is class is thought for BGM or another Background/Continous noises manipulations
 // For using SFX, just use the SoundExtensions with a GameObject .
 public class SoundManager : MonoBehaviour
 {
-    private EventInstance audioVideo;
+    private EventInstance bgmEvent;
     private PLAYBACK_STATE status;
 
-    public bool PlayAudioFromVideo(string filename, GameObject originSound)
+    PARAMETER_DESCRIPTION parameterSample;
+    public void Start()
     {
-        //Debug.Log("Calling with file:"+ filename);
-        if (!StopAudioFromVideo())
-        {
-            Debug.Log("FAILED To Stop");
-        }
+        RuntimeManager.StudioSystem.getParameterDescriptionByName("ParamName", out parameterSample);
+    }
 
-        audioVideo = RuntimeManager.CreateInstance("event:/" + filename.Split(".")[0]);
-        //heal.setParameterByID(fullHealthParameterId, restoreAll ? 1.0f : 0.0f);
-        audioVideo.set3DAttributes(RuntimeUtils.To3DAttributes(originSound));
-        audioVideo.start();
-        return audioVideo.release().HasFlag(FMOD.RESULT.OK);
+    public bool StartBGM()
+    {
+      
+        bgmEvent = RuntimeManager.CreateInstance("event:/" + "StandardBGM");
+        //audioVideo.set3DAttributes(RuntimeUtils.To3DAttributes(originSound));
+        bgmEvent.start();
+        return bgmEvent.release().HasFlag(FMOD.RESULT.OK);
 
     }
 
-    public bool StopAudioFromVideo()
+    public bool SetFloatProperty(float value)
     {
-        audioVideo.getPlaybackState(out status);
+        return bgmEvent.setParameterByName("",value).HasFlag(FMOD.RESULT.OK);
+    }
+
+    public bool StopBGM()
+    {
+        bgmEvent.getPlaybackState(out status);
         switch (status)
         {
             case PLAYBACK_STATE.STARTING:
             case PLAYBACK_STATE.PLAYING:
             case PLAYBACK_STATE.SUSTAINING:
-                audioVideo.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                bgmEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 //    Debug.Log("It's playing a audio video, Force Stopping ");
                 break;
             default: break;
