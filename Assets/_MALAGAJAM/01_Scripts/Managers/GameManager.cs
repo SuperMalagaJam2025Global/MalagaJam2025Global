@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -21,9 +23,15 @@ public class GameManager : MonoBehaviour
     {
         soundManager = GetComponent<SoundManager>();
         var basic = playerCharacter.GetComponent<BasicPlayerStates>();
-        
+
         basic.OnGameOverSignal.AddListener(GameOver);
         basic.OnChangeSize.AddListener(ChangedSize);
+        basic.OnAddToTimer.AddListener(ChangedTimer);
+    }
+
+    private void ChangedTimer(float arg0)
+    {
+        currentTime += arg0;
     }
 
     void ChangedSize(float relativeSize)
