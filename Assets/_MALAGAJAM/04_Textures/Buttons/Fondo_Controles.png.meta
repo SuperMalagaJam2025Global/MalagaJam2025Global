@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f84a9bfa65cf2d3468bf5905c2d3d988
+guid: d68ada5266511c542b41bd14534d980e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Button_Exit_0
+      name: Fondo_Controles_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 54
-        width: 537
-        height: 168
+        x: 54
+        y: 91
+        width: 1830
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 097b9064b23930341bb1d4514b2edcb4
-      internalID: -356446462
+      spriteID: 3df5fcdeaf2920840bee165a33f992e3
+      internalID: -1488042442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Controles_1
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 99
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee799a664b9a674caa7b3b47051bc49
+      internalID: 1650766173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Controles_2
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 90
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6746a22426b4fc469c6c4e0c9a606ac
+      internalID: 1793215733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Controles_3
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 97
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d16ae2218811342a174cf3dae5c1b6
+      internalID: 652495747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fondo_Controles_4
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 100
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2a24276ba19e54ba53b2680c49bcf9
+      internalID: -192767857
       vertices: []
       indices: 
       edges: []
@@ -154,7 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Button_Exit_0: -356446462
+      Fondo_Controles_0: -1488042442
+      Fondo_Controles_1: 1650766173
+      Fondo_Controles_2: 1793215733
+      Fondo_Controles_3: 652495747
+      Fondo_Controles_4: -192767857
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
