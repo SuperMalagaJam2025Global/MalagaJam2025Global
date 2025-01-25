@@ -20,7 +20,7 @@ public static class SoundManager
 
     public static bool StartBGM()
     {
-        bgmEvent = RuntimeManager.CreateInstance("event:/" + "music 2");
+        bgmEvent = RuntimeManager.CreateInstance("event:/music 2");
         bgmEvent.start();
         return bgmEvent.release().HasFlag(FMOD.RESULT.OK);
     }
