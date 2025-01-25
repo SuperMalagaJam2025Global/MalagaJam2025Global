@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public TMPro.TMP_Text CountdownComponent;
     const float velocity = 1.20f;
     public int sceneState = 0; // Manages the velocity
     public GameObject gameOverUI;
     public GameObject playerCharacter;
     private float currentTime = 60;
-    public SoundManager soundManager;
+    private SoundManager soundManager;
 
     public float GetVelocity()
     {
@@ -31,7 +30,6 @@ public class GameManager : MonoBehaviour
         soundManager.SetFloatProperty(relativeSize);
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -40,11 +38,11 @@ public class GameManager : MonoBehaviour
         if (sceneState == -1) { return; }
         // On Game Logic
         currentTime -= Time.deltaTime;
+        CountdownComponent.text = currentTime.ToString("00:00");
         if (currentTime <= 0)
         {
             GameOver();
         }
-
     }
 
     void GameOver()
