@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public TMPro.TMP_Text CountdownComponent;
+    [SerializeField] private TMPro.TMP_Text CountdownComponent;
     const float velocity = 1.20f;
-    public int sceneState = 0; // Manages the velocity
-    public GameObject gameOverUI;
-    public GameObject playerCharacter;
-    private float currentTime = 60;
+    private int sceneState = 0; // Manages the velocity
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject playerCharacter;
+    [SerializeField] private float currentTime = 60;
     private SoundManager soundManager;
+    private SpawnManager spawnManager;
 
     public float GetVelocity()
     {
@@ -19,10 +20,21 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         soundManager = GetComponent<SoundManager>();
-        var basic = playerCharacter.GetComponent<BasicPlayerStates>();
-        
-        basic.OnGameOverSignal.AddListener(GameOver);
-        basic.OnChangeSize.AddListener(ChangedSize);
+        spawnManager = GetComponent<SpawnManager>();
+        var playerStates = playerCharacter.GetComponent<BasicPlayerStates>();
+
+        playerStates.OnGameOverSignal.AddListener(GameOver);
+        playerStates.OnChangeSize.AddListener(ChangedSize);
+        playerStates.OnAddToTimer.AddListener(ChangedTimer);
+
+        // Assuming when It's loading this manager, start the game.
+        spawnManager.SetSpawnStatus(true);
+
+    }
+
+    private void ChangedTimer(float additiveTime)
+    {
+        currentTime += additiveTime;
     }
 
     void ChangedSize(float relativeSize)
@@ -49,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Game Over!");
         sceneState = -1;
+        spawnManager.SetSpawnStatus(false);
         // playerController.Disable();
         gameOverUI.SetActive(true);
     }
