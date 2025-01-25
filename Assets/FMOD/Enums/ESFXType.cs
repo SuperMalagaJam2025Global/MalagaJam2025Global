@@ -1,7 +1,10 @@
 public enum ESFXType
 {
-    BrokenGlass,
-    Carry,
-    Jump,
-    Like
+    Back,
+    Press,
+    Dead, 
+    BubblesMate,
+    step1,
+    step2,
+    step3
 }
