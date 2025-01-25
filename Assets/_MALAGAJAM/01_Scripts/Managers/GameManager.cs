@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
         currentTime += additiveTime;
     }
 
+    public static float GetCurrentTime()
+    {
+        return currentTime;
+    }
+
     public static void ChangedSize(float relativeSize)
     {
 
