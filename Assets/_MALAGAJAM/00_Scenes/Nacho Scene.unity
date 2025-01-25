@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 849896484}
   - component: {fileID: 849896483}
   m_Layer: 0
-  m_Name: 01
+  m_Name: SquidSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1143,7 +1143,7 @@ GameObject:
   - component: {fileID: 1153980916}
   - component: {fileID: 1153980915}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Squid
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1714,11 +1714,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 533169563}
+  - {fileID: 523992774}
+  - {fileID: 683291447}
+  - {fileID: 1950096551}
   - {fileID: 590621218}
   - {fileID: 7538515543964542782}
   - {fileID: 1153980917}
-  - {fileID: 683291447}
-  - {fileID: 1950096551}
   - {fileID: 757919797}
   - {fileID: 1028366427}
-  - {fileID: 523992774}
