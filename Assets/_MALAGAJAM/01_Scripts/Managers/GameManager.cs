@@ -1,33 +1,42 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TMPro.TMP_Text CountdownComponent;
-    const float velocity = 1.20f;
-    public int sceneState = 0; // Manages the velocity
-    public GameObject gameOverUI;
-    public GameObject playerCharacter;
-    private float currentTime = 60;
-    private SoundManager soundManager;
-
-    public float GetVelocity()
-    {
-        return velocity * sceneState;
-    }
+    [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private float TimeDuration = 160;
+    private static float currentTime = 160; // fallback default value
+    private static SpawnManager spawnManager;
+    private static bool isGameRunning = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        soundManager = GetComponent<SoundManager>();
-        var basic = playerCharacter.GetComponent<BasicPlayerStates>();
-        
-        basic.OnGameOverSignal.AddListener(GameOver);
-        basic.OnChangeSize.AddListener(ChangedSize);
+        spawnManager = GetComponent<SpawnManager>();
+        currentTime = TimeDuration;
+        // Assuming when It's loading this manager, start the game.
+        spawnManager.SetSpawnStatus(true);
+
     }
 
-    void ChangedSize(float relativeSize)
+    public static void AddTimer(float additiveTime)
     {
-        soundManager.SetFloatProperty(relativeSize);
+        currentTime += additiveTime;
+    }
+
+    public static float GetCurrentTime()
+    {
+        return currentTime;
+    }
+
+    public static void ChangedSize(float relativeSize)
+    {
+
+        SoundManager.SetFloatProperty(
+            relativeSize >= 60 ?
+            EBGMStatus.Normal
+            : EBGMStatus.Accelerado);
     }
 
     // Update is called once per frame
@@ -35,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         // Stuff always running
         // TODO/
-        if (sceneState == -1) { return; }
+        if (!isGameRunning) { return; }
         // On Game Logic
         currentTime -= Time.deltaTime;
         CountdownComponent.text = currentTime.ToString("00:00");
@@ -43,13 +52,26 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        if (!isGameRunning && !gameOverUI.activeSelf)
+        {
+            gameOverUI.SetActive(true);
+            return;
+        }
     }
 
-    void GameOver()
+    public static void RestartGame()
+    {
+        SoundManager.SetFloatProperty(EBGMStatus.Normal);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public static void GameOver()
     {
         Debug.Log("Game Over!");
-        sceneState = -1;
+        isGameRunning = false;
+        spawnManager.SetSpawnStatus(false);
         // playerController.Disable();
-        gameOverUI.SetActive(true);
     }
 }
