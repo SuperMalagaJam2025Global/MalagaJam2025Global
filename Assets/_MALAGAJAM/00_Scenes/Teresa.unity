@@ -1379,6 +1379,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2268646829576744437, guid: 27b9e532fe92bf942b348c78b990b8d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -4820541742559877589, guid: 9503275aef5775444b005664535d9ffd, type: 3}
+    - target: {fileID: -1030871996457892545, guid: 27b9e532fe92bf942b348c78b990b8d3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33500455210197c4b9b7a3ed221ebfb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 27b9e532fe92bf942b348c78b990b8d3, type: 3}
       propertyPath: m_Name
       value: MenuPlayer
