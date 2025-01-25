@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2d60b0b0c2b24243b7be80fa07f8b43
+guid: a5b1da9c5db4bef4180e1f0bf04b7c22
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Imagen_Movil_rotando_10
+      name: Texto_Controles_17
       rect:
         serializedVersion: 2
-        x: 213
-        y: 531
-        width: 337
-        height: 182
+        x: 191
+        y: 774
+        width: 520
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de0b098b48507ab4887e71064ac25dbb
-      internalID: -997070327
+      spriteID: 37084ca6269c66c47a93ed32e2dd1580
+      internalID: 2100604336
       vertices: []
       indices: 
       edges: []
@@ -154,29 +154,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Imagen_Movil_rotando_0: 1490946869
-      Imagen_Movil_rotando_1: 1783089908
-      Imagen_Movil_rotando_10: -997070327
-      Imagen_Movil_rotando_11: 1439223792
-      Imagen_Movil_rotando_12: 2075695239
-      Imagen_Movil_rotando_13: 1668562792
-      Imagen_Movil_rotando_14: -1168085907
-      Imagen_Movil_rotando_15: 1778280588
-      Imagen_Movil_rotando_16: -2008682718
-      Imagen_Movil_rotando_17: 721722578
-      Imagen_Movil_rotando_18: 917476220
-      Imagen_Movil_rotando_19: 1396532366
-      Imagen_Movil_rotando_2: -1890155112
-      Imagen_Movil_rotando_20: -357210534
-      Imagen_Movil_rotando_21: -1149286235
-      Imagen_Movil_rotando_22: 349078317
-      Imagen_Movil_rotando_3: -2016577430
-      Imagen_Movil_rotando_4: 2033707721
-      Imagen_Movil_rotando_5: 358960295
-      Imagen_Movil_rotando_6: -1025947710
-      Imagen_Movil_rotando_7: 1257565818
-      Imagen_Movil_rotando_8: -1078010524
-      Imagen_Movil_rotando_9: 1928356812
+      Texto_Controles_0: 1845992989
+      Texto_Controles_1: 504616517
+      Texto_Controles_10: -872540776
+      Texto_Controles_11: -1964272722
+      Texto_Controles_12: -945845072
+      Texto_Controles_13: 194204623
+      Texto_Controles_14: 304056496
+      Texto_Controles_15: 193576433
+      Texto_Controles_16: -83924332
+      Texto_Controles_17: 2100604336
+      Texto_Controles_18: 1419650488
+      Texto_Controles_19: -1908382961
+      Texto_Controles_2: 2091194905
+      Texto_Controles_20: 1546747662
+      Texto_Controles_21: -748292710
+      Texto_Controles_22: 1988765065
+      Texto_Controles_23: 1443984773
+      Texto_Controles_24: -1731951673
+      Texto_Controles_25: 597273634
+      Texto_Controles_26: 378532113
+      Texto_Controles_27: -422188563
+      Texto_Controles_28: 961989856
+      Texto_Controles_29: 1051416913
+      Texto_Controles_3: 910723227
+      Texto_Controles_30: 972092568
+      Texto_Controles_31: 175974327
+      Texto_Controles_32: 1117074869
+      Texto_Controles_33: 1463197521
+      Texto_Controles_34: 2030536166
+      Texto_Controles_4: 6667248
+      Texto_Controles_5: -344574228
+      Texto_Controles_6: 1445563477
+      Texto_Controles_7: -2041122347
+      Texto_Controles_8: -830096639
+      Texto_Controles_9: 482262161
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2d60b0b0c2b24243b7be80fa07f8b43
+guid: fc01481d64d6fa441b97c3fbfb0504f5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Imagen_Movil_rotando_10
+      name: Texto_Creditos_15
       rect:
         serializedVersion: 2
-        x: 213
-        y: 531
-        width: 337
-        height: 182
+        x: 197
+        y: 767
+        width: 447
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de0b098b48507ab4887e71064ac25dbb
-      internalID: -997070327
+      spriteID: 746a5d1572d08fb40804da2fb8e84c05
+      internalID: 1567442327
       vertices: []
       indices: 
       edges: []
@@ -154,29 +154,47 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Imagen_Movil_rotando_0: 1490946869
-      Imagen_Movil_rotando_1: 1783089908
-      Imagen_Movil_rotando_10: -997070327
-      Imagen_Movil_rotando_11: 1439223792
-      Imagen_Movil_rotando_12: 2075695239
-      Imagen_Movil_rotando_13: 1668562792
-      Imagen_Movil_rotando_14: -1168085907
-      Imagen_Movil_rotando_15: 1778280588
-      Imagen_Movil_rotando_16: -2008682718
-      Imagen_Movil_rotando_17: 721722578
-      Imagen_Movil_rotando_18: 917476220
-      Imagen_Movil_rotando_19: 1396532366
-      Imagen_Movil_rotando_2: -1890155112
-      Imagen_Movil_rotando_20: -357210534
-      Imagen_Movil_rotando_21: -1149286235
-      Imagen_Movil_rotando_22: 349078317
-      Imagen_Movil_rotando_3: -2016577430
-      Imagen_Movil_rotando_4: 2033707721
-      Imagen_Movil_rotando_5: 358960295
-      Imagen_Movil_rotando_6: -1025947710
-      Imagen_Movil_rotando_7: 1257565818
-      Imagen_Movil_rotando_8: -1078010524
-      Imagen_Movil_rotando_9: 1928356812
+      Texto_Creditos_0: -1270216519
+      Texto_Creditos_1: -1791981696
+      Texto_Creditos_10: 185517307
+      Texto_Creditos_11: -720685845
+      Texto_Creditos_12: 624105110
+      Texto_Creditos_13: -888481081
+      Texto_Creditos_14: 1495858892
+      Texto_Creditos_15: 1567442327
+      Texto_Creditos_16: -424596937
+      Texto_Creditos_17: 1073398063
+      Texto_Creditos_18: 1798771423
+      Texto_Creditos_19: -1996173239
+      Texto_Creditos_2: -1052304485
+      Texto_Creditos_20: -517388234
+      Texto_Creditos_21: 994514668
+      Texto_Creditos_22: -508147768
+      Texto_Creditos_23: -1154719640
+      Texto_Creditos_24: 1332209585
+      Texto_Creditos_25: 1196249032
+      Texto_Creditos_26: 1522667460
+      Texto_Creditos_27: -1231215750
+      Texto_Creditos_28: -1127396042
+      Texto_Creditos_29: 737676968
+      Texto_Creditos_3: 356018883
+      Texto_Creditos_30: -474872420
+      Texto_Creditos_31: 1705660301
+      Texto_Creditos_32: -1802030721
+      Texto_Creditos_33: -262362480
+      Texto_Creditos_34: -1273212422
+      Texto_Creditos_35: -873356017
+      Texto_Creditos_36: 559677805
+      Texto_Creditos_37: -345448358
+      Texto_Creditos_38: 154559063
+      Texto_Creditos_39: -508417706
+      Texto_Creditos_4: 586114038
+      Texto_Creditos_40: 1191578321
+      Texto_Creditos_5: -836582802
+      Texto_Creditos_6: -453996549
+      Texto_Creditos_7: -1469483752
+      Texto_Creditos_8: 870000783
+      Texto_Creditos_9: 556768291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

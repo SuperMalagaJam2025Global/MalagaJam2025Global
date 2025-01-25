@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2d60b0b0c2b24243b7be80fa07f8b43
+guid: 5e403442652f5cd4b8e3f2545cbd7a40
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Imagen_Movil_rotando_10
+      name: Fondo_0
       rect:
         serializedVersion: 2
-        x: 213
-        y: 531
-        width: 337
-        height: 182
+        x: 54
+        y: 106
+        width: 1830
+        height: 881
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de0b098b48507ab4887e71064ac25dbb
-      internalID: -997070327
+      spriteID: dd20d642a0eb87e4e89c23218cc99a02
+      internalID: -1104929779
       vertices: []
       indices: 
       edges: []
@@ -154,29 +154,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Imagen_Movil_rotando_0: 1490946869
-      Imagen_Movil_rotando_1: 1783089908
-      Imagen_Movil_rotando_10: -997070327
-      Imagen_Movil_rotando_11: 1439223792
-      Imagen_Movil_rotando_12: 2075695239
-      Imagen_Movil_rotando_13: 1668562792
-      Imagen_Movil_rotando_14: -1168085907
-      Imagen_Movil_rotando_15: 1778280588
-      Imagen_Movil_rotando_16: -2008682718
-      Imagen_Movil_rotando_17: 721722578
-      Imagen_Movil_rotando_18: 917476220
-      Imagen_Movil_rotando_19: 1396532366
-      Imagen_Movil_rotando_2: -1890155112
-      Imagen_Movil_rotando_20: -357210534
-      Imagen_Movil_rotando_21: -1149286235
-      Imagen_Movil_rotando_22: 349078317
-      Imagen_Movil_rotando_3: -2016577430
-      Imagen_Movil_rotando_4: 2033707721
-      Imagen_Movil_rotando_5: 358960295
-      Imagen_Movil_rotando_6: -1025947710
-      Imagen_Movil_rotando_7: 1257565818
-      Imagen_Movil_rotando_8: -1078010524
-      Imagen_Movil_rotando_9: 1928356812
+      Fondo_0: -1104929779
+      Fondo_1: -57224950
+      Fondo_2: 1307330164
+      Fondo_3: 441040167
+      Fondo_4: -902829983
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
