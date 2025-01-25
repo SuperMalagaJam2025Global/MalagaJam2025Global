@@ -46,6 +46,8 @@ public class InputPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            // GameManager.AddTimer(-10);
+            // GameManager.GameOver();
             Debug.Log("Game Over!");
             // basicPlayerStates.OnAddToTimer.Invoke(-10);
         }
