@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputPlayer : MonoBehaviour
@@ -8,6 +9,13 @@ public class InputPlayer : MonoBehaviour
     public float blowSpeed = 1.0f;
 
     public float fallSpeed = 0.1f;
+
+    BasicPlayerStates basicPlayerStates;
+
+    void Start()
+    {
+        basicPlayerStates = GetComponent<BasicPlayerStates>();
+    }
     void Update()
     {
         Vector3 dir = Vector3.zero;
@@ -49,4 +57,16 @@ public class InputPlayer : MonoBehaviour
         }
         return dir;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Game Over!");
+            // basicPlayerStates.OnAddToTimer.Invoke(-10);
+        }
+    }
 }
+
+
+
