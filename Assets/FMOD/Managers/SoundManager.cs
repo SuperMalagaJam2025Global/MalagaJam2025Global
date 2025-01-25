@@ -7,18 +7,18 @@ using Unity.VisualScripting;
 
 // This is class is thought for BGM or another Background/Continous noises manipulations
 // For using SFX, just use the SoundExtensions with a GameObject .
-public class SoundManager : MonoBehaviour
+public static class SoundManager
 {
-    private EventInstance bgmEvent;
-    private PLAYBACK_STATE status;
+    private static EventInstance bgmEvent;
+    private static PLAYBACK_STATE status;
 
-    PARAMETER_DESCRIPTION parameterSample;
-    public void Start()
+    private static PARAMETER_DESCRIPTION parameterSample;
+    public static void Start()
     {
         RuntimeManager.StudioSystem.getParameterDescriptionByName("ParamName", out parameterSample);
     }
 
-    public bool StartBGM()
+    public static bool StartBGM()
     {
       
         bgmEvent = RuntimeManager.CreateInstance("event:/" + "StandardBGM");
@@ -28,12 +28,12 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    public bool SetFloatProperty(float value)
+    public static bool SetFloatProperty(float value)
     {
         return bgmEvent.setParameterByName("",value).HasFlag(FMOD.RESULT.OK);
     }
 
-    public bool StopBGM()
+    public static bool StopBGM()
     {
         bgmEvent.getPlaybackState(out status);
         switch (status)
@@ -49,8 +49,4 @@ public class SoundManager : MonoBehaviour
 
         return status == PLAYBACK_STATE.STOPPED || status == PLAYBACK_STATE.STOPPED;
     }
-
-    // This not make sense but...
-    public bool PlaySFX(ESFXType sfxSound) =>
-        gameObject.PlaySFX(sfxSound);
 }
