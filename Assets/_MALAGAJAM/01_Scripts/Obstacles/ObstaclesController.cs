@@ -7,29 +7,52 @@ public class ObstaclesController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject[] obstacles;
-
-    public float spawnTime = 2f;
-
+    public GameObject bubbles;
+    [SerializeField] private float spawnTime = 2f;
+    public float spawnFrequency = 2f;
     public Transform spawnPoint;
+
+    [SerializeField] private float timeBuble = 8f;
+
+    public float timeBubleFrequency = 8f;
     void Start()
     {
-
+        spawnTime = spawnFrequency;
+        timeBuble = timeBubleFrequency;
     }
 
     // Update is called once per frame
     void Update()
     {
         spawnTime -= Time.deltaTime;
-        if (spawnTime <= 0)
+        timeBuble -= Time.deltaTime;
+
+
+        if (spawnTime <= 0 && timeBuble > 0)
         {
-            spawnTime = 2f;
-            SpawnObstacle();
+            spawnTime = spawnFrequency;
+            Spawn(false);
+        }
+        else if (timeBuble <= 0)
+        {
+            timeBuble = timeBubleFrequency;
+            Spawn(true);
         }
     }
 
-    public void SpawnObstacle()
+    public void Spawn(bool isBuble)
     {
-        int randomIndex = Random.Range(0, obstacles.Length);
-        Instantiate(obstacles[randomIndex], spawnPoint.position, Quaternion.identity);
+        if (isBuble)
+        {
+
+            Instantiate(bubbles, spawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+            int randomIndex = Random.Range(0, obstacles.Length);
+            Instantiate(obstacles[randomIndex], spawnPoint.position, Quaternion.identity);
+        }
     }
+
+
 }
