@@ -115,7 +115,7 @@ jobs:
       uses: manleydev/butler-publish-itchio-action@master
       env:
             BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-            CHANNEL: linux
+            CHANNEL: android
             ITCH_GAME: ${{ vars.ITCH_GAME }}
             ITCH_USER: ${{ secrets.ITCHIO_USER }}
             PACKAGE: build/Android
