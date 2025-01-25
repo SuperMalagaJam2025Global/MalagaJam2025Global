@@ -26,8 +26,7 @@ public class SpawnManager : MonoBehaviour
 
     public UnityEvent OnWaveEndedSignal { get { return WaveEndedSignal; } }
 
-
-    bool IsActive;
+    private bool IsActive;
 
     private float[] tmp = new float[2];
 

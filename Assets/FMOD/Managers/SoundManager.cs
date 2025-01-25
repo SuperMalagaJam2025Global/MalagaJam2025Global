@@ -20,17 +20,14 @@ public static class SoundManager
 
     public static bool StartBGM()
     {
-      
         bgmEvent = RuntimeManager.CreateInstance("event:/" + "StandardBGM");
-        //audioVideo.set3DAttributes(RuntimeUtils.To3DAttributes(originSound));
         bgmEvent.start();
         return bgmEvent.release().HasFlag(FMOD.RESULT.OK);
-
     }
 
-    public static bool SetFloatProperty(float value)
+    public static bool SetFloatProperty(EBGMStatus value)
     {
-        return bgmEvent.setParameterByName("",value).HasFlag(FMOD.RESULT.OK);
+        return bgmEvent.setParameterByName("tiempo", (float)value).HasFlag(FMOD.RESULT.OK);
     }
 
     public static bool StopBGM()

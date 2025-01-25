@@ -1,19 +1,20 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
     [SerializeField] private GameObject gameOverUI;
-    [SerializeField] private GameObject playerCharacter;
-    [SerializeField] private static float currentTime = 60;
-    private SpawnManager spawnManager;
-    private bool isGameRunning = true;
+    [SerializeField] private float TimeDuration = 160;
+    private static float currentTime = 160; // fallback default value
+    private static SpawnManager spawnManager;
+    private static bool isGameRunning = true;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnManager = GetComponent<SpawnManager>();
-
+        currentTime = TimeDuration;
         // Assuming when It's loading this manager, start the game.
         spawnManager.SetSpawnStatus(true);
 
@@ -26,7 +27,11 @@ public class GameManager : MonoBehaviour
 
     public static void ChangedSize(float relativeSize)
     {
-        SoundManager.SetFloatProperty(relativeSize);
+
+        SoundManager.SetFloatProperty(
+            relativeSize >= 60 ?
+            EBGMStatus.Normal
+            : EBGMStatus.Accelerado);
     }
 
     // Update is called once per frame
@@ -42,14 +47,26 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        if (!isGameRunning && !gameOverUI.activeSelf)
+        {
+            gameOverUI.SetActive(true);
+            return;
+        }
     }
 
-    void GameOver()
+    public static void RestartGame()
+    {
+        SoundManager.SetFloatProperty(EBGMStatus.Normal);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+
+    public static void GameOver()
     {
         Debug.Log("Game Over!");
         isGameRunning = false;
         spawnManager.SetSpawnStatus(false);
         // playerController.Disable();
-        gameOverUI.SetActive(true);
     }
 }

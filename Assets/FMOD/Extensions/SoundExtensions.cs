@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SoundExtensions
 {
-    public static bool PlaySFX(this GameObject gameObject, ESFXType sfxSound) => 
+    public static bool PlaySFX(this GameObject gameObject, ESFXType sfxSound) =>
         PlayCustomAudioEvent(gameObject, GetID(sfxSound));
 
     public static bool PlayCustomAudioEvent(this GameObject originSound, string eventName)
@@ -16,8 +16,7 @@ public static class SoundExtensions
         return sfx.release().HasFlag(FMOD.RESULT.OK);
     }
 
-
-    private static string GetID(ESFXType sfxSound) => 
+    private static string GetID(ESFXType sfxSound) =>
     sfxSound switch
     {
         ESFXType.BrokenGlass => "BrokenGlass",
