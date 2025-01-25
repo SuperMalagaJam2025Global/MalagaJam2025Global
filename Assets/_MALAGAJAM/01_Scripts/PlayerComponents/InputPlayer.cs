@@ -1,32 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputPlayer : MonoBehaviour
 {
     public float speed = 10.0f;
     public float blowSpeed = 1.0f;
-
     public float fallSpeed = 0.1f;
 
     BasicPlayerStates basicPlayerStates;
     Rigidbody2D rb;
-    void Start()
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         basicPlayerStates = GetComponent<BasicPlayerStates>();
     }
-    void Update()
-    {
 
-
-    }
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         MovementPlayer();
     }
+
     private Vector3 Blow(Vector3 dir)
     {
         if (Input.touchCount > 0)
@@ -36,9 +29,7 @@ public class InputPlayer : MonoBehaviour
             {
                 dir = dir + new Vector3(0, 1, 0) * blowSpeed;
             }
-
         }
-
         return dir;
     }
 
@@ -55,8 +46,6 @@ public class InputPlayer : MonoBehaviour
 
     private void MovementPlayer()
     {
-
-
         Vector3 dir = Vector3.zero;
         // we assume that the device is held parallel to the ground
         // and the Home button is in the right hand
@@ -80,6 +69,3 @@ public class InputPlayer : MonoBehaviour
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
     }
 }
-
-
-
