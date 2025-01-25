@@ -9,31 +9,49 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenuContainer;
     [SerializeField] private GameObject controlsMenuContainer;
     [SerializeField] private GameObject controlsCanvas;
+    [SerializeField] private GameObject creditsMenuContainer;
+    [SerializeField] private GameObject creditsCanvas;
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject controlsButton;
-    [SerializeField] private GameObject backButton;
+    [SerializeField] private GameObject backControlButton;
+    [SerializeField] private GameObject backCreditsButton;
     [SerializeField] private GameObject quitButton;
-    [SerializeField] private float controlPanelAnimDuration = 1.5f;
+    [SerializeField] private float panelAnimDuration = 1.5f;
     [SerializeField] private float fadeOutAnimDuration;
     [SerializeField] private float effectBounceStrength = 1.2f;
 
     public void OnStartButtonPressed() { StartCoroutine(FadeOutMenuAnimation()); }
 
-    public void OnControlsButtonPressed()
+    private IEnumerator FadeOutMenuAnimation()
     {
-        controlsMenuContainer.transform.localScale = Vector3.zero;
-
-        Button backButtonComponent = backButton.GetComponent<Button>();
-        if (backButtonComponent != null) { backButtonComponent.interactable = false; }  // disable back button temporarily
-
-        controlsMenuContainer.transform.DOScale(Vector3.one, controlPanelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
-            .OnComplete(() => { backButtonComponent.interactable = true; });            // enable back button
+        yield return new WaitForSeconds(fadeOutAnimDuration);
+        SceneManager.LoadScene(1);     // change to game scene - index 1
     }
 
-    public void OnBackButtonPressed()
+    public void OnControlsButtonPressed() { OnButtonPress(controlsMenuContainer, backControlButton); }
+
+    public void OnCreditsButtonPressed() { OnButtonPress(creditsMenuContainer, backCreditsButton); }
+
+    private void OnButtonPress(GameObject menuContainer, GameObject button)
     {
-        StartCoroutine(RemoveControlsCanvas());
-        controlsMenuContainer.transform.DOScale(Vector3.zero, controlPanelAnimDuration).SetEase(Ease.InBack, effectBounceStrength)
+        menuContainer.transform.localScale = Vector3.zero;
+
+        Button buttonComponent = button.GetComponent<Button>();
+        if (buttonComponent != null) { buttonComponent.interactable = false; }        // disable button temporarily
+
+        menuContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
+            .OnComplete(() => { buttonComponent.interactable = true; });              // re-enable button
+    }
+
+    public void OnBackControlsButtonPressed() { SequenceAfterBackButtonIsPressed(controlsCanvas, controlsMenuContainer, backControlButton); }
+
+    public void OnBackCreditsButtonPressed() { SequenceAfterBackButtonIsPressed(creditsCanvas, creditsMenuContainer, backCreditsButton); }
+
+    private void SequenceAfterBackButtonIsPressed(GameObject canvasToRemove, GameObject menuContainer, GameObject backButton)
+    {
+        StartCoroutine(RemoveCanvas(canvasToRemove));
+
+        menuContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength)
             .OnStart(() =>
             {
                 Button backButtonComponent = backButton.GetComponent<Button>();                  // make sure the back button can't be pressed while animating
@@ -41,19 +59,13 @@ public class MainMenuUIManager : MonoBehaviour
             });
     }
 
-    private IEnumerator RemoveControlsCanvas()
+    private IEnumerator RemoveCanvas(GameObject canvasToRemove)
     {
-        yield return new WaitForSeconds(controlPanelAnimDuration);
-        controlsCanvas.SetActive(false);                             // disable the controls panel
+        yield return new WaitForSeconds(panelAnimDuration);
+        canvasToRemove.SetActive(false);                         // disable the selected panel (either credits or controls)
     }
 
     public void OnQuitButtonPressed() { StartCoroutine(QuitGameAnimation()); }
-
-    private IEnumerator FadeOutMenuAnimation()
-    {
-        yield return new WaitForSeconds(fadeOutAnimDuration);
-        SceneManager.LoadScene(1);     // change to game scene - index 1
-    }
 
     private IEnumerator QuitGameAnimation()
     {
