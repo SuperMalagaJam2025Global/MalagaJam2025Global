@@ -28,7 +28,7 @@ public class ObstaclesController : MonoBehaviour
         timeBuble -= Time.deltaTime;
 
 
-        if (spawnTime <= 0 && timeBuble > 0)
+        if (spawnTime <= 0 && timeBuble > 2)
         {
             spawnTime = spawnFrequency;
             Spawn(false);

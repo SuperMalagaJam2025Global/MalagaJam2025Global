@@ -7,14 +7,15 @@ TagManager:
   - Enemy
   - Obstacle
   - DestroyObstacles
+  - Bubbles
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Limits
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 
