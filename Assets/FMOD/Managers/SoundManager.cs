@@ -28,7 +28,7 @@ public static class SoundManager
     public static bool SetFloatProperty(EBGMStatus value)
     {
         // Not my Fault
-        return bgmEvent.setParameterByName("tiempoooo", (float)value).HasFlag(FMOD.RESULT.OK);
+        return bgmEvent.setParameterByName("Parameter 2", (float)value).HasFlag(FMOD.RESULT.OK);
     }
 
     public static bool StopBGM()

@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
         currentTime = TimeDuration;
         // Assuming when It's loading this manager, start the game.
         spawnManager.SetSpawnStatus(true);
+        SoundManager.SetFloatProperty(EBGMStatus.Normal);
+        SoundManager.StartBGM();
 
     }
 
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public static void GameOver()
     {
+        SoundManager.StopBGM();
         Debug.Log("Game Over!");
         isGameRunning = false;
         spawnManager.SetSpawnStatus(false);
