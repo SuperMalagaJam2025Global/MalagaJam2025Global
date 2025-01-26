@@ -12,7 +12,9 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         timerInstance = this;
-        ResetTimer();
+        isTimerActive = true;    // enable timer
+        timeLeft = playerAirTimer;    // initialize timer
+        // ResetTimer();
     }
 
     private void Update() { DecrementTimer(); }
@@ -45,6 +47,6 @@ public class Timer : MonoBehaviour
     {
         isTimerActive = true;    // enable timer
         timeLeft = playerAirTimer;    // initialize timer
-        // pompa.GetComponent<BubbleAnimation>().ResetBubble();
+        pompa.GetComponent<BubbleAnimation>().ResetBubble();
     }
 }
