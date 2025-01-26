@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int breatherCounter = 8;         // breather = respiradero, counter of breathers the user has encountered
     [SerializeField] private float gameOverMenuAnimDuration;
-    private bool isGameRunning = true;
 
     // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
 
@@ -16,7 +15,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        isGameRunning = true;
         if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
         SoundManager.SetFloatProperty(EBGMStatus.Normal);   // start with normal game theme
     }
@@ -37,11 +35,16 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void PauseGame()
+    {
+        StartCoroutine(StopGameAfterMenuAnimation());
+        UIManager.uiManagerInstance.ShowPauseMenuUI();
+    }
+
     public void GameOver()
     {
         StartCoroutine(StopGameAfterMenuAnimation());     
         SoundManager.StopBGM();
-        isGameRunning = false;
     }
 
     private IEnumerator StopGameAfterMenuAnimation()

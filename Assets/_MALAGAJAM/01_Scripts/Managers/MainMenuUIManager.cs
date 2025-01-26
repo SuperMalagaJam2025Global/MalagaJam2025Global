@@ -6,16 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [Header("Main Menu UI")]
     [SerializeField] private GameObject mainMenuContainer;
-    [SerializeField] private GameObject controlsMenuContainer;
-    [SerializeField] private GameObject controlsCanvas;
-    [SerializeField] private GameObject creditsMenuContainer;
-    [SerializeField] private GameObject creditsCanvas;
     [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject quitButton;
+
+    [Header("Controls Menu UI")]
+    [SerializeField] private GameObject controlsCanvas;
+    [SerializeField] private GameObject controlsMenuContainer;
     [SerializeField] private GameObject controlsButton;
     [SerializeField] private GameObject backControlButton;
+
+    [Header("Credits Menu UI")]
+    [SerializeField] private GameObject creditsMenuContainer;
+    [SerializeField] private GameObject creditsCanvas;
     [SerializeField] private GameObject backCreditsButton;
-    [SerializeField] private GameObject quitButton;
+
+    [Header("Animation Settings")]
     [SerializeField] private float panelAnimDuration = 1.5f;
     [SerializeField] private float fadeOutAnimDuration;
     [SerializeField] private float effectBounceStrength = 1.2f;
@@ -25,7 +32,7 @@ public class MainMenuUIManager : MonoBehaviour
     private IEnumerator FadeOutMenuAnimation()
     {
         yield return new WaitForSeconds(fadeOutAnimDuration); 
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
+        //SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
 
         SceneManager.LoadScene(1);     // change to game scene - index 1
     }
