@@ -19,6 +19,7 @@ public class ObstaclesController : MonoBehaviour
     {
         spawnTime = spawnFrequency;
         timeBuble = timeBubleFrequency;
+        SpawnObstacle();
     }
 
     // Update is called once per frame
@@ -49,9 +50,14 @@ public class ObstaclesController : MonoBehaviour
         }
         else
         {
-            int randomIndex = Random.Range(0, obstacles.Length);
-            Instantiate(obstacles[randomIndex], spawnPoint.position, Quaternion.identity);
+            SpawnObstacle();
         }
+    }
+
+    public void SpawnObstacle()
+    {
+        int randomIndex = Random.Range(0, obstacles.Length);
+        Instantiate(obstacles[randomIndex], spawnPoint.position, Quaternion.identity);
     }
 
 

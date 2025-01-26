@@ -46,16 +46,16 @@ public class InputPlayer : MonoBehaviour
         Vector3 dir = Vector3.zero;
 
         dir.x = Input.acceleration.x;
-      
+
         dir = Blow(dir);
-       
+
         if (dir.sqrMagnitude > 1)
             dir.Normalize();
 
-     
+
         dir *= Time.deltaTime;
         Debug.Log(dir);
-     
+
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
     }
 
@@ -63,8 +63,7 @@ public class InputPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Bubbles")
         {
-            //TODO: Add logic for timer and add cicles
-
+            Timer.timerInstance.ResetTimer();
 
         }
         else if (other.gameObject.tag == "Enemy")
