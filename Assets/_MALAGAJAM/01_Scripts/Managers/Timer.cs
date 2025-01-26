@@ -4,7 +4,7 @@ public class Timer : MonoBehaviour
 {
     public static Timer timerInstance;
 
-    [SerializeField] private float totalTime;
+    [SerializeField] private float totalTime;   // duration of the game scene
     [SerializeField] float timeLeft;
     private bool isTimerActive;
 
@@ -14,10 +14,7 @@ public class Timer : MonoBehaviour
         ResetTimer();
     }
 
-    private void Update()
-    {
-        DecrementTimer();
-    }
+    private void Update() { DecrementTimer(); }
 
     private void DecrementTimer()
     {
@@ -30,12 +27,16 @@ public class Timer : MonoBehaviour
 
             if (timeLeft < 0)
             {
-                isTimerActive = false;                        // disable timer
-
-                GameManager.gameManagerInstance.GameOver();   // trigger game over logic
+                isTimerActive = false;                         // disable timer
+                UIManager.uiManagerInstance.ShowGameOverUI();  // show game over UI
+                GameManager.gameManagerInstance.GameOver();    // trigger game over logic
             }
         }
     }
+
+    public void AddTimer(float amountToAdd) { timeLeft += amountToAdd; }
+
+    public void DecreaseTime(float amountToDecrease) { timeLeft += amountToDecrease; }
 
     public void ResetTimer()
     {
