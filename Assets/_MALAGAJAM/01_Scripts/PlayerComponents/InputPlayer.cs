@@ -54,7 +54,7 @@ public class InputPlayer : MonoBehaviour
 
      
         dir *= Time.deltaTime;
-        // Debug.Log(dir);
+        Debug.Log(dir);
      
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
     }
