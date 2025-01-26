@@ -71,9 +71,9 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
-        if (!isGameRunning && !gameOverUI.activeSelf)
+        if (!isGameRunning /* && !gameOverUI.activeSelf*/)
         {
-            gameOverUI.SetActive(true);
+        //    gameOverUI.SetActive(true);
             return;
         }
     }
