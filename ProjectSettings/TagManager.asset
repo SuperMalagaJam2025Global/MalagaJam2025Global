@@ -9,6 +9,7 @@ TagManager:
   - DestroyObstacles
   - Bubbles
   - Fish
+  - EndGame
   layers:
   - Default
   - TransparentFX

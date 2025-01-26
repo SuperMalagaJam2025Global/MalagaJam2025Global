@@ -43,10 +43,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        StartCoroutine(StopGameAfterMenuAnimation());     
+        StartCoroutine(StopGameAfterMenuAnimation());
         SoundManager.StopBGM();
     }
 
+    public int GetBreather()
+    {
+        return breatherCounter;
+    }
     private IEnumerator StopGameAfterMenuAnimation()
     {
         yield return new WaitForSeconds(gameOverMenuAnimDuration);   // wait for game over menu to be animated

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputPlayer : MonoBehaviour
 {
@@ -74,6 +75,12 @@ public class InputPlayer : MonoBehaviour
         else if (other.gameObject.tag == "Fish")
         {
             Timer.timerInstance.DecreaseTime(2);
+            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+        }
+
+        else if (other.gameObject.tag == "EndGame")
+        {
+            SceneManager.LoadScene(0);
             // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
         }
     }

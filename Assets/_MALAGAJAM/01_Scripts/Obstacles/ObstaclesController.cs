@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class ObstaclesController : MonoBehaviour
@@ -7,14 +8,26 @@ public class ObstaclesController : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject[] obstacles;
-    public GameObject bubbles;
+
+    [Header("Obstacles")]
     [SerializeField] private float spawnTime = 2f;
     public float spawnFrequency = 2f;
     public Transform spawnPoint;
-
+    [Header("Bubbles")]
+    public GameObject bubbles;
     [SerializeField] private float timeBuble = 8f;
 
     public float timeBubleFrequency = 8f;
+
+    [Header("Fish")]
+
+    public GameObject fish;
+    public float fishFrequency = 10f;
+    public float fishTime = 10f;
+
+    [Header("EndGame")]
+    public GameObject endGame;
+
     void Start()
     {
         spawnTime = spawnFrequency;
@@ -25,20 +38,42 @@ public class ObstaclesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        spawnTime -= Time.deltaTime;
-        timeBuble -= Time.deltaTime;
+        int breatherCounter = GameManager.gameManagerInstance.GetBreather();
+
+        if (breatherCounter <= 0)
+        {
+            Instantiate(endGame, spawnPoint.position, Quaternion.identity);
+        }
+        else
+        {
+
+            spawnTime -= Time.deltaTime;
+            timeBuble -= Time.deltaTime;
+            fishTime -= Time.deltaTime;
+
+            if (spawnTime <= 0 && timeBuble > 2)
+            {
+                spawnTime = spawnFrequency;
+                Spawn(false);
+            }
 
 
-        if (spawnTime <= 0 && timeBuble > 2)
-        {
-            spawnTime = spawnFrequency;
-            Spawn(false);
+            if (timeBuble <= 0)
+            {
+                timeBuble = timeBubleFrequency;
+                Spawn(true);
+            }
+
+
+            if (fishTime <= 0)
+            {
+                fishTime = fishFrequency;
+                Instantiate(fish, spawnPoint.position, Quaternion.identity);
+            }
+
         }
-        else if (timeBuble <= 0)
-        {
-            timeBuble = timeBubleFrequency;
-            Spawn(true);
-        }
+
+
     }
 
     public void Spawn(bool isBuble)
