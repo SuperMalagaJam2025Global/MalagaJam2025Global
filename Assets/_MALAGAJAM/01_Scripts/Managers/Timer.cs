@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
             if (timeLeft > totalTime / 2) { SoundManager.SetFloatProperty(EBGMStatus.Normal); }
             else { SoundManager.SetFloatProperty(EBGMStatus.Accelerado); }
 
-            if (timeLeft < 0)
+            if (timeLeft <= 0)
             {
                 isTimerActive = false;                         // disable timer
                 UIManager.uiManagerInstance.ShowGameOverUI();  // show game over UI
