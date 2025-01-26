@@ -71,5 +71,10 @@ public class InputPlayer : MonoBehaviour
             Timer.timerInstance.DecreaseTime(50);
             SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
         }
+        else if (other.gameObject.tag == "Fish")
+        {
+            Timer.timerInstance.DecreaseTime(2);
+            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+        }
     }
 }
