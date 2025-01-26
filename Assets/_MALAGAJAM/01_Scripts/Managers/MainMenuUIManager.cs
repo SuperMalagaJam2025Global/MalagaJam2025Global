@@ -36,9 +36,6 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void OnButtonPress(GameObject menuContainer, GameObject button)
     {
-        // TODO: Please check this, Teresa
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);
-
         menuContainer.transform.localScale = Vector3.zero;
 
         Button buttonComponent = button.GetComponent<Button>();
@@ -54,7 +51,6 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void SequenceAfterBackButtonIsPressed(GameObject canvasToRemove, GameObject menuContainer, GameObject backButton)
     {
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
         StartCoroutine(RemoveCanvas(canvasToRemove));
 
         menuContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength)
