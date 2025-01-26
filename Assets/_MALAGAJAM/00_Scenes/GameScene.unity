@@ -5498,6 +5498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAirTimer: 21
+  playerAirTimer: 21
   timeLeft: 0
 --- !u!1 &1647110127
 GameObject:
@@ -6276,6 +6277,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715543874}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1774546871 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4831200040543694744, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
+  m_PrefabInstance: {fileID: 7538515543964542782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1817761804
 GameObject:
   m_ObjectHideFlags: 0
@@ -6545,8 +6551,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1197295132}
+  m_Children: []
   m_Father: {fileID: 1274270017}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7224,6 +7229,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2423943820278165509, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4453639353370590960, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
       propertyPath: m_UsedByEffector
       value: 0
@@ -7280,7 +7289,11 @@ PrefabInstance:
     - {fileID: 900497995685578776, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5006308566235215132, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
-    m_AddedGameObjects: []
+    - {fileID: 6452822636900676393, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4831200040543694744, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 283302914}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8010186288608317319, guid: 3ef7b6d0440cc304d9a8087163c1345d, type: 3}
       insertIndex: -1
