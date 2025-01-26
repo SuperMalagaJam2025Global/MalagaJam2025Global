@@ -4,7 +4,7 @@ public class MenuAudioManager : MonoBehaviour
 {
     private void Start()
     {
-        SoundManager.StartBGM();
+        SoundManager.StartBGM(BGMType.MainMenu);
     }
 
     // TODO: Please check this, Teresa

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         }
         
 
-        if (!SoundManager.StartBGM()) { Debug.Log("Warning, Music doesn't found"); }
+        if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
 
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
         
