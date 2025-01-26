@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private float effectBounceStrength = 1.2f;
     [SerializeField] private GameObject yesButton;              // yes button to restart the level
     [SerializeField] private GameObject noButton;               // no button to quit the game
+    private bool restartLevel;
 
     private void Awake() { uiManagerInstance = this; }
 
@@ -39,24 +41,23 @@ public class UIManager : MonoBehaviour
 
     public void OnYesButtonPressed()     // trigger to restart the level
     {
-
+        Time.timeScale = 1f;
+        StartCoroutine(ActionAfterAnimation(true));
+        gameOverContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength);
     }
 
-    public void OnNoButtonPressed()     // trigger to quit the game
+    public void OnNoButtonPressed()     // trigger to return to the main menu
     {
-        Time.timeScale = 1f;                            // resume game for DOTween animations to work
-        StartCoroutine(QuitGameAfterAnimation());
-        gameOverContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength);
+        Time.timeScale = 1f;            // resume game for DOTween animations to work
+        StartCoroutine(ActionAfterAnimation(false));
+        gameOverContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength);
     }
 
-    private IEnumerator QuitGameAfterAnimation()
+    private IEnumerator ActionAfterAnimation(bool restartLevel)
     {
         yield return new WaitForSeconds(panelAnimDuration);
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;    // exit play mode - quit Unity Editor
-#endif
-        Application.Quit();                                 // quit application
+        if (restartLevel) { SceneManager.LoadScene(1); }        // restart the level
+        else { SceneManager.LoadScene(0); }                     // return to the main menu
     }
 
 }
