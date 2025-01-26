@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
 
     public void AddTimer(float amountToAdd) { timeLeft += amountToAdd; }
 
-    public void DecreaseTime(float amountToDecrease) { timeLeft += amountToDecrease; }
+    public void DecreaseTime(float amountToDecrease) { timeLeft -= amountToDecrease; }
 
     public void ResetTimer()
     {

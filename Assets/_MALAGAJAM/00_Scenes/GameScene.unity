@@ -1235,11 +1235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5371713954832860619, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.7738988
+      value: 17.2
       objectReference: {fileID: 0}
     - target: {fileID: 5371713954832860619, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8924828
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5371713954832860619, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1280,6 +1280,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4740031792673857393, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
       insertIndex: -1
       addedObject: {fileID: 971262764}
+    - targetCorrespondingSourceObject: {fileID: 4740031792673857393, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 971262766}
   m_SourcePrefab: {fileID: 100100000, guid: 00ccdc031a9e6314daa2885674faf543, type: 3}
 --- !u!1 &971262763 stripped
 GameObject:
@@ -1339,6 +1342,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_DirtyAABB: 0
+--- !u!114 &971262766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971262763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be9fb4921c64e748a48a4a0a149f5a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!1 &990104385
 GameObject:
   m_ObjectHideFlags: 0
