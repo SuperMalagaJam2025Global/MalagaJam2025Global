@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         isGamePaused = false;
         isGameOver = false;
-         SoundTrigger.PlayCustomAudioEvent(ESFXType.BackToTheGame);    
+        //  SoundTrigger.PlayCustomAudioEvent(ESFXType.BackToTheGame);    
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
         SceneManager.LoadScene(1);
     }
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGamePaused && !isGameOver)
         {
-            SoundTrigger.PlayCustomAudioEvent(ESFXType.Pause);
+            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Pause);
             isGamePaused = true;
             StartCoroutine(StopGameAfterMenuAnimation());
             UIManager.uiManagerInstance.ShowPauseMenuUI();

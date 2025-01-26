@@ -55,7 +55,7 @@ public class MainMenuUIManager : MonoBehaviour
         menuContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
             .OnComplete(() => { buttonComponent.interactable = true; });
 
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);        // re-enable button
+        // SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);        // re-enable button
     }
 
     public void OnBackControlsButtonPressed() { SequenceAfterBackButtonIsPressed(controlsCanvas, controlsMenuContainer, backControlButton); }
@@ -89,7 +89,7 @@ public class MainMenuUIManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;    // exit play mode - quit Unity Editor
 #endif
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
+        // SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
         Application.Quit();                                 // quit application
     }
 }

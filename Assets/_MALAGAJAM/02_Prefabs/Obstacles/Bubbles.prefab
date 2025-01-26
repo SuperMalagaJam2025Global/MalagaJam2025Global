@@ -617,7 +617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be9fb4921c64e748a48a4a0a149f5a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFish: 0
   speed: 4
+  speedfish: 6
+  time: 15
+  timeloop: 15
 --- !u!198 &5979033608971000126
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5425,7 +5429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771285228391804215}
-  - component: {fileID: 1171888093992494696}
+  - component: {fileID: 7324300832483249097}
   m_Layer: 0
   m_Name: Bubblescolider
   m_TagString: Bubbles
@@ -5442,14 +5446,14 @@ Transform:
   m_GameObject: {fileID: 8163178474981699006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.16, z: 0}
+  m_LocalPosition: {x: 0, y: -2.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4014625169241092228}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1171888093992494696
-CircleCollider2D:
+--- !u!70 &7324300832483249097
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5480,6 +5484,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -3.11}
-  serializedVersion: 2
-  m_Radius: 4.06
+  m_Offset: {x: 0, y: 0.79}
+  m_Size: {x: 4.12, y: 10.25}
+  m_Direction: 0

@@ -93,7 +93,7 @@ public class ObstaclesController : MonoBehaviour
     {
         if (isBuble)
         {
-            SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
+            // SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
             Instantiate(bubbles, spawnPoint.position, Quaternion.identity);
         }
         else

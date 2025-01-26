@@ -27,7 +27,7 @@ public class BubbleAnimation : MonoBehaviour
 
         gameObject.transform.DOKill(); // Detiene cualquier animación activa
         gameObject.transform.localScale = initialScale;
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.FillBubble);
+        // SoundTrigger.PlayCustomAudioEvent(ESFXType.FillBubble);
         // Opcional: Si deseas reiniciar la animación después del reset
         AnimateBubble();
     }
