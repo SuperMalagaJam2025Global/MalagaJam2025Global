@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int breatherCounter = 8;         // breather = respiradero, counter of breathers the user has encountered
     [SerializeField] private float gameOverMenuAnimDuration;
-
-    // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
+    private bool isGamePaused;
+    private bool isGameOver;
 
     private void Awake() { gameManagerInstance = this; }
 
@@ -17,34 +17,46 @@ public class GameManager : MonoBehaviour
     {
         if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
         SoundManager.SetFloatProperty(EBGMStatus.Normal);   // start with normal game theme
+        isGamePaused = false;
+        isGameOver = false;
     }
 
     public void DecrementBreatherCounter()
     {
         breatherCounter--;
 
-        if (breatherCounter == 0)
+        if (breatherCounter == 0 && !isGamePaused && !isGameOver)
         {
-            // Trigger end-game logic - win the game!
+            SceneManager.LoadScene(2);    // trigger end game animation in a different scene
         }
     }
 
     public void RestartGame()
     {
+        isGamePaused = false;
+        isGameOver = false;
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
         SceneManager.LoadScene(1);
     }
 
     public void PauseGame()
     {
-        StartCoroutine(StopGameAfterMenuAnimation());
-        UIManager.uiManagerInstance.ShowPauseMenuUI();
+        if(!isGamePaused && !isGameOver)
+        {
+            isGamePaused = true;
+            StartCoroutine(StopGameAfterMenuAnimation());
+            UIManager.uiManagerInstance.ShowPauseMenuUI();
+        }
     }
 
     public void GameOver()
     {
-        StartCoroutine(StopGameAfterMenuAnimation());     
-        SoundManager.StopBGM();
+        if (!isGamePaused && !isGameOver)
+        {
+            isGameOver = true;
+            StartCoroutine(StopGameAfterMenuAnimation());
+            SoundManager.StopBGM();
+        }
     }
 
     private IEnumerator StopGameAfterMenuAnimation()

@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         if (buttonLeftButtonComponent != null) { buttonLeftButtonComponent.interactable = false; }
         if (buttonRightComponent != null) { buttonRightComponent.interactable = false; }
 
-        gameOverContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
+        menuContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
             .OnComplete(() =>   // re-enable buttons
             {
                 buttonLeftButtonComponent.interactable = true;
@@ -59,24 +59,42 @@ public class UIManager : MonoBehaviour
 
     public void OnResumeButtonPressed()
     {
+        Time.timeScale = 1f;
+        pauseMenuContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength);
+    }
 
+    public void OnQuitButtonPressed()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(WaitToQuitGame());
+        pauseMenuContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength);
+    }
+
+    private IEnumerator WaitToQuitGame()
+    {
+        yield return new WaitForSeconds(panelAnimDuration);
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;    // exit play mode - quit Unity Editor
+#else
+        Application.Quit();                                 // quit application
+#endif
     }
 
     public void OnYesButtonPressed()     // trigger to restart the level
     {
         Time.timeScale = 1f;
-        StartCoroutine(ActionAfterAnimation(true));
+        StartCoroutine(ActionAfterGameOverAnimation(true));
         gameOverContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength);
     }
 
     public void OnNoButtonPressed()     // trigger to return to the main menu
     {
         Time.timeScale = 1f;            // resume game for DOTween animations to work
-        StartCoroutine(ActionAfterAnimation(false));
+        StartCoroutine(ActionAfterGameOverAnimation(false));
         gameOverContainer.transform.DOScale(Vector3.zero, panelAnimDuration).SetEase(Ease.InBack, effectBounceStrength);
     }
 
-    private IEnumerator ActionAfterAnimation(bool restartLevel)
+    private IEnumerator ActionAfterGameOverAnimation(bool restartLevel)
     {
         yield return new WaitForSeconds(panelAnimDuration);
         if (restartLevel) { SceneManager.LoadScene(1); }        // restart the level
