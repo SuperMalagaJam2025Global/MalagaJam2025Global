@@ -27,12 +27,14 @@ public class ObstaclesController : MonoBehaviour
 
     [Header("EndGame")]
     public GameObject endGame;
+    public bool isEndGame = false;
 
     void Start()
     {
         spawnTime = spawnFrequency;
         timeBuble = timeBubleFrequency;
         SpawnObstacle();
+        isEndGame = false;
     }
 
     // Update is called once per frame
@@ -40,8 +42,16 @@ public class ObstaclesController : MonoBehaviour
     {
         int breatherCounter = GameManager.gameManagerInstance.GetBreather();
 
-        if (breatherCounter <= 0)
+
+
+        if (breatherCounter == 0)
         {
+            isEndGame = true;
+        }
+
+        if (isEndGame)
+        {
+
             Instantiate(endGame, spawnPoint.position, Quaternion.identity);
         }
         else
