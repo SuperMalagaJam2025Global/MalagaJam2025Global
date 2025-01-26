@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_MALAGAJAM/00_Scenes/GameScene.unity
     guid: cb348991ad2c7894a9a9cc704c5cf463
+  - enabled: 1
+    path: Assets/_MALAGAJAM/00_Scenes/EndGameScene.unity
+    guid: 6af16cd86458fa04babd60df874ca19a
   m_configObjects: {}
