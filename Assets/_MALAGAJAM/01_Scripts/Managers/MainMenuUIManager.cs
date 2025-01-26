@@ -25,7 +25,7 @@ public class MainMenuUIManager : MonoBehaviour
     private IEnumerator FadeOutMenuAnimation()
     {
         yield return new WaitForSeconds(fadeOutAnimDuration); 
-        SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
+        // SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
 
         SceneManager.LoadScene(1);     // change to game scene - index 1
     }
