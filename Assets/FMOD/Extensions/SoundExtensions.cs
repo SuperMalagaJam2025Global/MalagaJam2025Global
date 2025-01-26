@@ -9,7 +9,7 @@ public static class SoundExtensions
 
     public static bool PlayCustomAudioEvent(this GameObject originSound, string eventName)
     {
-        EventInstance sfx = RuntimeManager.CreateInstance("event:/" + eventName);
+        EventInstance sfx = RuntimeManager.CreateInstance("event:/sfxt/" + eventName);
         //heal.setParameterByID(fullHealthParameterId, restoreAll ? 1.0f : 0.0f);
         sfx.set3DAttributes(RuntimeUtils.To3DAttributes(originSound));
         sfx.start();

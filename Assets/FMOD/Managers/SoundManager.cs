@@ -37,7 +37,7 @@ public static class SoundManager
     sfxSound switch
     {
         BGMType.MainGame => "music 2",
-        BGMType.MainMenu => "main menu definitivo",
+        BGMType.MainMenu => "mainmenudefinitivo",
         BGMType.Win => "win",
         _ => "",
     };

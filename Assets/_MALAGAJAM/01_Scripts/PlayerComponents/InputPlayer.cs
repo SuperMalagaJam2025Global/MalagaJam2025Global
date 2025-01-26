@@ -70,19 +70,19 @@ public class InputPlayer : MonoBehaviour
         else if (other.gameObject.tag == "Enemy")
         {
             Timer.timerInstance.DecreaseTime(50);
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+
+            this.gameObject.PlaySFX(ESFXType.Dead);
         }
         else if (other.gameObject.tag == "Fish")
         {
             Timer.timerInstance.DecreaseTime(2);
-
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.FishCollision);
+            this.gameObject.PlaySFX(ESFXType.FishCollision);
         }
 
         else if (other.gameObject.tag == "EndGame")
         {
             SceneManager.LoadScene(2);
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+            this.gameObject.PlaySFX(ESFXType.Dead);
         }
     }
 }

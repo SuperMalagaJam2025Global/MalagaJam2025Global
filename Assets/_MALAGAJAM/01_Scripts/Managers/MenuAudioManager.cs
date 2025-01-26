@@ -8,7 +8,7 @@ public class MenuAudioManager : MonoBehaviour
     }
 
     // TODO: Please check this, Teresa
-    //SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);
+    //this.gameObject.PlaySFX(ESFXType.Press);
 
-    // SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
+    // this.gameObject.PlaySFX(ESFXType.Back);
 }

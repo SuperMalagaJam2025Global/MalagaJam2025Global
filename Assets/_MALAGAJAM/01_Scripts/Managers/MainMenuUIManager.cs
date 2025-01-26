@@ -36,7 +36,7 @@ public class MainMenuUIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(fadeOutAnimDuration);
 
-        //SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
+        this.gameObject.PlaySFX(ESFXType.BubblesMate);
 
         SceneManager.LoadScene(1);     // change to game scene - index 1
     }
@@ -55,7 +55,9 @@ public class MainMenuUIManager : MonoBehaviour
         menuContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
             .OnComplete(() => { buttonComponent.interactable = true; });
 
-        // SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);        // re-enable button
+
+        gameObject.PlaySFX(ESFXType.Press);        // re-enable button
+
     }
 
     public void OnBackControlsButtonPressed() { SequenceAfterBackButtonIsPressed(controlsCanvas, controlsMenuContainer, backControlButton); }
@@ -89,7 +91,7 @@ public class MainMenuUIManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;    // exit play mode - quit Unity Editor
 #endif
-        // SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
+        this.gameObject.PlaySFX(ESFXType.Back);
         Application.Quit();                                 // quit application
     }
 }
