@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
+    // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
     [SerializeField] private GameObject gameOverUI;
     [SerializeField] private float TimeDuration = 160;
     private static float currentTime = 160; // fallback default value
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         if (!isGameRunning) { return; }
         // On Game Logic
         currentTime -= Time.deltaTime;
-        CountdownComponent.text = currentTime.ToString("00:00");
+        // CountdownComponent.text = currentTime.ToString("00:00");
         if (currentTime <= 0)
         {
             GameOver();
