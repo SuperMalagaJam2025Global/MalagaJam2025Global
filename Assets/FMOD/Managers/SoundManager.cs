@@ -5,6 +5,12 @@ using FMOD.Studio;
 using FMODUnity;
 using Unity.VisualScripting;
 
+public enum BGMType
+{
+    MainMenu,
+    MainGame
+}
+
 // This is class is thought for BGM or another Background/Continous noises manipulations
 // For using SFX, just use the SoundExtensions with a GameObject .
 public static class SoundManager
@@ -17,12 +23,21 @@ public static class SoundManager
     {
     }
 
-    public static bool StartBGM()
+    public static bool StartBGM(BGMType eSFXBGM)
     {
-        bgmEvent = RuntimeManager.CreateInstance("event:/music 2");
+        
+        bgmEvent = RuntimeManager.CreateInstance("event:/" + GetID(eSFXBGM));
         bgmEvent.start();
         return bgmEvent.release().HasFlag(FMOD.RESULT.OK);
     }
+
+    private static string GetID(BGMType sfxSound) =>
+    sfxSound switch
+    {
+        BGMType.MainGame => "music 2",
+        BGMType.MainMenu => "music", // TBD, Not Implemented
+        _ => "",
+    };
 
     public static bool SetFloatProperty(EBGMStatus value)
     {

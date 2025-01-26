@@ -3,14 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
-    [SerializeField] private GameObject gameOverUI;
+    public static GameManager gameManagerInstance;
+
+    [SerializeField] private int breatherCounter = 8;       // breather = respiradero, counter of breathers the user has encountered
+    
     [SerializeField] private float TimeDuration = 160;
     private static float currentTime = 160; // fallback default value
     private static SpawnManager spawnManager;
     private static bool isGameRunning = true;
 
-    // Start is called before the first frame update
+    // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
+
+    private void Awake() { gameManagerInstance = this; }
+
     void Start()
     {
         spawnManager = GetComponent<SpawnManager>();
@@ -22,11 +27,23 @@ public class GameManager : MonoBehaviour
         }
         
 
-        if (!SoundManager.StartBGM()) { Debug.Log("Warning, Music doesn't found"); }
+        if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
 
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
         
         
+
+    }
+
+    public void DecrementBreatherCounter()
+    {
+        breatherCounter--;
+
+        if (breatherCounter == 0)
+        {
+            // Trigger end-game logic
+            
+        }
 
     }
 
@@ -38,15 +55,6 @@ public class GameManager : MonoBehaviour
     public static float GetCurrentTime()
     {
         return currentTime;
-    }
-
-    public static void ChangedSize(float relativeSize)
-    {
-
-        SoundManager.SetFloatProperty(
-            relativeSize >= 60 ?
-            EBGMStatus.Normal
-            : EBGMStatus.Accelerado);
     }
 
     // Update is called once per frame
@@ -70,14 +78,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void RestartGame()
+    public void RestartGame()
     {
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(1);
     }
 
-    public static void GameOver()
+    public void GameOver()
     {
         SoundManager.StopBGM();
         Debug.Log("Game Over!");
