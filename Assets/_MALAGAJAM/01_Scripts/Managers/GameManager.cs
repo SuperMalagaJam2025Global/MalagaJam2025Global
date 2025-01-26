@@ -16,9 +16,17 @@ public class GameManager : MonoBehaviour
         spawnManager = GetComponent<SpawnManager>();
         currentTime = TimeDuration;
         // Assuming when It's loading this manager, start the game.
-        spawnManager.SetSpawnStatus(true);
+        if(spawnManager != null)
+        {
+            spawnManager.SetSpawnStatus(true);
+        }
+        
+
+        if (!SoundManager.StartBGM()) { Debug.Log("Warning, Music doesn't found"); }
+
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
-        SoundManager.StartBGM();
+        
+        
 
     }
 
