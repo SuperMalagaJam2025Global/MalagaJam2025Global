@@ -4,7 +4,7 @@ public class Timer : MonoBehaviour
 {
     public static Timer timerInstance;
 
-    [SerializeField] private float totalTime;   // duration of the game scene
+    [SerializeField] private float playerAirTimer;   // duration of the game scene
     [SerializeField] float timeLeft;
     private bool isTimerActive;
 
@@ -22,13 +22,12 @@ public class Timer : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
 
-            if (timeLeft > totalTime / 2) { SoundManager.SetFloatProperty(EBGMStatus.Normal); }
+            if (timeLeft > playerAirTimer / 2) { SoundManager.SetFloatProperty(EBGMStatus.Normal); }
             else { SoundManager.SetFloatProperty(EBGMStatus.Accelerado); }
 
             if (timeLeft <= 0)
             {
                 isTimerActive = false;                         // disable timer
-                UIManager.uiManagerInstance.ShowGameOverUI();  // show game over UI
                 GameManager.gameManagerInstance.GameOver();    // trigger game over logic
             }
         }
@@ -41,6 +40,6 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         isTimerActive = true;    // enable timer
-        timeLeft = totalTime;    // initialize timer
+        timeLeft = playerAirTimer;    // initialize timer
     }
 }

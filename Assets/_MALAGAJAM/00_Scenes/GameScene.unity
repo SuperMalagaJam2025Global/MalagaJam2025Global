@@ -167,11 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breatherCounter: 8
-
   gameOverMenuAnimDuration: 1.05
-
-  player: {fileID: 0}
-
+  player: {fileID: 601959290}
 --- !u!1 &116326300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f17ffa124d6d1649870e5abd0bc8118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 21
+  playerAirTimer: 0
   timeLeft: 0
 --- !u!1 &1647110127
 GameObject:

@@ -55,11 +55,11 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
         if (!isGamePaused && !isGameOver)
         {
             isGameOver = true;
             StartCoroutine(StopGameAfterMenuAnimation());
+            UIManager.uiManagerInstance.ShowGameOverUI();
             SoundManager.StopBGM();
 			
 			if (player != null)
