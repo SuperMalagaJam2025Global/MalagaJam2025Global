@@ -28,6 +28,7 @@ public class ObstaclesController : MonoBehaviour
     [Header("EndGame")]
     public GameObject endGame;
     public bool isEndGame = false;
+    public bool endGameActive = false;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class ObstaclesController : MonoBehaviour
         timeBuble = timeBubleFrequency;
         SpawnObstacle();
         isEndGame = false;
+        endGameActive = false;
     }
 
     // Update is called once per frame
@@ -52,7 +54,11 @@ public class ObstaclesController : MonoBehaviour
         if (isEndGame)
         {
 
-            Instantiate(endGame, spawnPoint.position, Quaternion.identity);
+            if (!endGameActive)
+            {
+                endGameActive = true;
+                Instantiate(endGame, spawnPoint.position, Quaternion.identity);
+            }
         }
         else
         {

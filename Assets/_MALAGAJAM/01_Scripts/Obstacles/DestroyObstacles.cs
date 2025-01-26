@@ -19,7 +19,10 @@ public class DestroyObstacles : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collision");
-        if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Bubbles"))
+        if (other.gameObject.CompareTag("Obstacle") || other.gameObject.CompareTag("Bubbles") || other.gameObject.CompareTag("Fish"))
+        {
+            Destroy(other.gameObject);
+        }
         {
             Destroy(other.gameObject.transform.parent.gameObject);
         }

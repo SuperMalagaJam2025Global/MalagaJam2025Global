@@ -29,10 +29,10 @@ public class GameManager : MonoBehaviour
     {
         breatherCounter--;
 
-        if (breatherCounter == 0 && !isGamePaused && !isGameOver)
-        {
-            SceneManager.LoadScene(2);    // trigger end game animation in a different scene
-        }
+        // if (breatherCounter == 0 && !isGamePaused && !isGameOver)
+        // {
+        //     SceneManager.LoadScene(2);    // trigger end game animation in a different scene
+        // }
     }
 
     public void RestartGame()
