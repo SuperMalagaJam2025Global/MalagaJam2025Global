@@ -8,7 +8,8 @@ using Unity.VisualScripting;
 public enum BGMType
 {
     MainMenu,
-    MainGame
+    MainGame,
+    Win
 }
 
 // This is class is thought for BGM or another Background/Continous noises manipulations
@@ -25,6 +26,7 @@ public static class SoundManager
 
     public static bool StartBGM(BGMType eSFXBGM)
     {
+        StopBGM();
         
         bgmEvent = RuntimeManager.CreateInstance("event:/" + GetID(eSFXBGM));
         bgmEvent.start();
@@ -35,7 +37,8 @@ public static class SoundManager
     sfxSound switch
     {
         BGMType.MainGame => "music 2",
-        BGMType.MainMenu => "music", // TBD, Not Implemented
+        BGMType.MainMenu => "main menu definitivo",
+        BGMType.Win => "win",
         _ => "",
     };
 
