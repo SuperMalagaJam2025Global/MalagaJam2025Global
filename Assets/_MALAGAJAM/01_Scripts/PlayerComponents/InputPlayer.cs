@@ -35,37 +35,43 @@ public class InputPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            // GameManager.AddTimer(-10);
-            // GameManager.GameOver();
-            Debug.Log("Game Over!");
-            // basicPlayerStates.OnAddToTimer.Invoke(-10);
-        }
+        // if (other.gameObject.tag == "Enemy")
+        // {
+        //     Destroy(gameObject);
+        // }
     }
 
     private void MovementPlayer()
     {
         Vector3 dir = Vector3.zero;
-        // we assume that the device is held parallel to the ground
-        // and the Home button is in the right hand
-
-        // remap the device acceleration axis to game coordinates:
-        // 1) XY plane of the device is mapped onto XZ plane
-        // 2) rotated 90 degrees around Y axis
 
         dir.x = Input.acceleration.x;
-        // dir.z = Input.acceleration.x;
+      
         dir = Blow(dir);
-        // clamp acceleration vector to the unit sphere
+       
         if (dir.sqrMagnitude > 1)
             dir.Normalize();
 
-        // Make it move 10 meters per second instead of 10 meters per frame...
+     
         dir *= Time.deltaTime;
         Debug.Log(dir);
-        // Move object
-        // transform.Translate(dir * speed);
+     
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Bubbles")
+        {
+            //TODO: Add logic for timer and add cicles
+
+
+        }
+        else if (other.gameObject.tag == "Enemy")
+        {
+
+            Destroy(gameObject);
+            SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+        }
     }
 }

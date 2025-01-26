@@ -15,7 +15,6 @@ public static class SoundManager
     private static PARAMETER_DESCRIPTION parameterSample;
     public static void Start()
     {
-        RuntimeManager.StudioSystem.getParameterDescriptionByName("ParamName", out parameterSample);
     }
 
     public static bool StartBGM()

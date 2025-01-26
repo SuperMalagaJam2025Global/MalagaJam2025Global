@@ -18,12 +18,5 @@ public class OsbtacleMove : MonoBehaviour
         transform.Translate(new Vector3(-1, 0, 0) * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Collision");
-        if (other.gameObject.CompareTag("DestroyObstacles"))
-        {
-            Destroy(gameObject);
-        }
-    }
+   
 }
