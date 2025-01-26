@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
 
         player = GameObject.FindGameObjectWithTag("Player");
-
+        SoundManager.StartBGM(BGMType.MainGame);
         SoundManager.SetFloatProperty(EBGMStatus.Normal);   // start with normal game theme
         isGamePaused = false;
         isGameOver = false;
