@@ -63,7 +63,7 @@ public class InputPlayer : MonoBehaviour
 
         // Make it move 10 meters per second instead of 10 meters per frame...
         dir *= Time.deltaTime;
-        Debug.Log(dir);
+        //Debug.Log(dir);
         // Move object
         // transform.Translate(dir * speed);
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
