@@ -1,4 +1,5 @@
 using System.Collections;
+using FMOD;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private int breatherCounter = 8;         // breather = respiradero, counter of breathers the user has encountered
     [SerializeField] private float gameOverMenuAnimDuration;
-	[SerializeField] private GameObject player;
+    [SerializeField] private GameObject player;
 
     private bool isGamePaused;
     private bool isGameOver;
@@ -19,10 +20,18 @@ public class GameManager : MonoBehaviour
     {
 
         player = GameObject.FindGameObjectWithTag("Player");
-        if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
+        SoundManager.StartBGM(BGMType.MainGame);
         SoundManager.SetFloatProperty(EBGMStatus.Normal);   // start with normal game theme
         isGamePaused = false;
         isGameOver = false;
+    }
+
+    /// <summary>
+    /// This function is called when the MonoBehaviour will be destroyed.
+    /// </summary>
+    void OnDestroy()
+    {
+        SoundManager.StopBGM();
     }
 
     public void DecrementBreatherCounter()
@@ -39,14 +48,16 @@ public class GameManager : MonoBehaviour
     {
         isGamePaused = false;
         isGameOver = false;
+         SoundTrigger.PlayCustomAudioEvent(ESFXType.BackToTheGame);    
         SoundManager.SetFloatProperty(EBGMStatus.Normal);
         SceneManager.LoadScene(1);
     }
 
     public void PauseGame()
     {
-        if(!isGamePaused && !isGameOver)
+        if (!isGamePaused && !isGameOver)
         {
+            SoundTrigger.PlayCustomAudioEvent(ESFXType.Pause);
             isGamePaused = true;
             StartCoroutine(StopGameAfterMenuAnimation());
             UIManager.uiManagerInstance.ShowPauseMenuUI();
@@ -61,11 +72,11 @@ public class GameManager : MonoBehaviour
             StartCoroutine(StopGameAfterMenuAnimation());
             UIManager.uiManagerInstance.ShowGameOverUI();
             SoundManager.StopBGM();
-			
-			if (player != null)
-			{
-				Destroy(player);
-			}
+
+            if (player != null)
+            {
+                Destroy(player);
+            }
         }
     }
 

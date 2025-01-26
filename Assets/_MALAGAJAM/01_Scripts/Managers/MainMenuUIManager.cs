@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class MainMenuUIManager : MonoBehaviour
 {
@@ -27,11 +28,13 @@ public class MainMenuUIManager : MonoBehaviour
     [SerializeField] private float fadeOutAnimDuration;
     [SerializeField] private float effectBounceStrength = 1.2f;
 
+
+
     public void OnStartButtonPressed() { StartCoroutine(FadeOutMenuAnimation()); }
 
     private IEnumerator FadeOutMenuAnimation()
     {
-        yield return new WaitForSeconds(fadeOutAnimDuration); 
+        yield return new WaitForSeconds(fadeOutAnimDuration);
 
         //SoundTrigger.PlayCustomAudioEvent(ESFXType.BubblesMate);
 
@@ -50,7 +53,9 @@ public class MainMenuUIManager : MonoBehaviour
         if (buttonComponent != null) { buttonComponent.interactable = false; }        // disable button temporarily
 
         menuContainer.transform.DOScale(Vector3.one, panelAnimDuration).SetEase(Ease.OutBack, effectBounceStrength)
-            .OnComplete(() => { buttonComponent.interactable = true; });              // re-enable button
+            .OnComplete(() => { buttonComponent.interactable = true; });
+
+        SoundTrigger.PlayCustomAudioEvent(ESFXType.Press);        // re-enable button
     }
 
     public void OnBackControlsButtonPressed() { SequenceAfterBackButtonIsPressed(controlsCanvas, controlsMenuContainer, backControlButton); }
@@ -84,6 +89,7 @@ public class MainMenuUIManager : MonoBehaviour
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;    // exit play mode - quit Unity Editor
 #endif
+        SoundTrigger.PlayCustomAudioEvent(ESFXType.Back);
         Application.Quit();                                 // quit application
     }
 }

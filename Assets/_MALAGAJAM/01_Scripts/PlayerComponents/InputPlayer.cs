@@ -76,13 +76,13 @@ public class InputPlayer : MonoBehaviour
         {
             Timer.timerInstance.DecreaseTime(2);
 
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+            SoundTrigger.PlayCustomAudioEvent(ESFXType.FishCollision);
         }
 
         else if (other.gameObject.tag == "EndGame")
         {
             SceneManager.LoadScene(2);
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+            SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
         }
     }
 }
