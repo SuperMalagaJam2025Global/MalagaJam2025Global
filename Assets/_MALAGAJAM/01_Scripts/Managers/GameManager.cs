@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float gameOverMenuAnimDuration;
 
     // [SerializeField] private TMPro.TMP_Text CountdownComponent; // Manages the velocity
-
+    [SerializeField] private GameObject player;
     private void Awake() { gameManagerInstance = this; }
 
     private void Start()
     {
+
+        player = GameObject.FindGameObjectWithTag("Player");
         if (!SoundManager.StartBGM(BGMType.MainGame)) { Debug.Log("Warning, Music doesn't found"); }
         SoundManager.SetFloatProperty(EBGMStatus.Normal);   // start with normal game theme
     }
@@ -43,6 +45,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (player != null)
+        {
+            Destroy(player);
+        }
         StartCoroutine(StopGameAfterMenuAnimation());
         SoundManager.StopBGM();
     }
