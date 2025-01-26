@@ -54,7 +54,7 @@ public class InputPlayer : MonoBehaviour
 
 
         dir *= Time.deltaTime;
-        Debug.Log(dir);
+        // Debug.Log(dir);
 
         rb.AddForce(dir * speed, ForceMode2D.Impulse);
     }
@@ -68,8 +68,7 @@ public class InputPlayer : MonoBehaviour
         }
         else if (other.gameObject.tag == "Enemy")
         {
-
-            Destroy(gameObject);
+            Timer.timerInstance.DecreaseTime(50);
             SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
         }
     }
