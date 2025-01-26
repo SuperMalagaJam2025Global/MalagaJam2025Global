@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputPlayer : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class InputPlayer : MonoBehaviour
         if (other.gameObject.tag == "Bubbles")
         {
             Timer.timerInstance.ResetTimer();
-
+            GameManager.gameManagerInstance.DecrementBreatherCounter();
         }
         else if (other.gameObject.tag == "Enemy")
         {
@@ -74,6 +75,13 @@ public class InputPlayer : MonoBehaviour
         else if (other.gameObject.tag == "Fish")
         {
             Timer.timerInstance.DecreaseTime(2);
+
+            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
+        }
+
+        else if (other.gameObject.tag == "EndGame")
+        {
+            SceneManager.LoadScene(2);
             // SoundTrigger.PlayCustomAudioEvent(ESFXType.Dead);
         }
     }
