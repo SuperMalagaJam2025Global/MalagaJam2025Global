@@ -26,6 +26,7 @@ public static class SoundManager
 
     public static bool StartBGM(BGMType eSFXBGM)
     {
+        StopBGM();
         
         bgmEvent = RuntimeManager.CreateInstance("event:/" + GetID(eSFXBGM));
         bgmEvent.start();
