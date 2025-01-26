@@ -344,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.3, y: -35}
-  m_SizeDelta: {x: 606.9866, y: 54.8318}
+  m_AnchoredPosition: {x: -21, y: -45}
+  m_SizeDelta: {x: 653.1396, y: 54.8318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &259729106
 GameObject:
@@ -392,15 +392,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuContainer: {fileID: 500903642}
-  controlsMenuContainer: {fileID: 1818153978}
-  controlsCanvas: {fileID: 1799172774}
-  creditsMenuContainer: {fileID: 1081072517}
-  creditsCanvas: {fileID: 2096070666}
   startButton: {fileID: 598600520}
+  quitButton: {fileID: 1640198873}
+  controlsCanvas: {fileID: 1799172774}
+  controlsMenuContainer: {fileID: 1818153978}
   controlsButton: {fileID: 1088220425}
   backControlButton: {fileID: 1250392692}
+  creditsMenuContainer: {fileID: 1081072517}
+  creditsCanvas: {fileID: 2096070666}
   backCreditsButton: {fileID: 2075432310}
-  quitButton: {fileID: 1640198873}
   panelAnimDuration: 1.5
   fadeOutAnimDuration: 2.5
   effectBounceStrength: 1.2
@@ -556,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.3, y: 25}
+  m_AnchoredPosition: {x: -22, y: 25}
   m_SizeDelta: {x: 606.9866, y: 54.8318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &481327499
@@ -1122,6 +1122,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551799755}
   m_CullTransparentMesh: 1
+--- !u!1 &561002257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561002258}
+  - component: {fileID: 561002260}
+  - component: {fileID: 561002259}
+  m_Layer: 5
+  m_Name: KrillSoundIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &561002258
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561002257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1081072518}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 67, y: -109}
+  m_SizeDelta: {x: 137.3463, y: 47.99}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &561002259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561002257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7d2804f46fc952a4d97c9a01d2ed3c4b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &561002260
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561002257}
+  m_CullTransparentMesh: 1
 --- !u!1 &598600520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,7 +1556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159, y: -10}
+  m_AnchoredPosition: {x: -159, y: 2}
   m_SizeDelta: {x: 404.3887, y: 119.057}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877121066
@@ -1504,7 +1579,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "ARTISTS:\nClara C\xE1novas (aka TheRexCler)\nCarlos Ferre (aka TheGrillMaster)\nMonkStuff"
+  m_text: 'ARTISTS:
+
+    Clara Canovas (aka TheRexCler)
+
+    Carlos Ferre (aka TheGrillMaster)
+
+    MonkStuff'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
   m_sharedMaterial: {fileID: 1340960239404896116, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
@@ -1615,8 +1696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 43.89308, y: 0.000062103}
-  m_SizeDelta: {x: 87.7862, y: 55.576}
+  m_AnchoredPosition: {x: 49.4, y: 0.000062103}
+  m_SizeDelta: {x: 65.02, y: 55.576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977043765
 MonoBehaviour:
@@ -1638,7 +1719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1780972272, guid: e3a4788bc3446124f88ee5dd30be8e3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1787,6 +1868,7 @@ RectTransform:
   - {fileID: 1992252236}
   - {fileID: 877121065}
   - {fileID: 2084466836}
+  - {fileID: 561002258}
   m_Father: {fileID: 2096070670}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1972,8 +2054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45.119, y: 0.000061875}
-  m_SizeDelta: {x: 512.21, y: 55.576}
+  m_AnchoredPosition: {x: 47.059597, y: 10.9729}
+  m_SizeDelta: {x: 559.0148, y: 33.6304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171306313
 MonoBehaviour:
@@ -1995,7 +2077,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press on the screen to float upwards
+  m_text: Press and hold the screen to float upwards
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
   m_sharedMaterial: {fileID: 1340960239404896116, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
@@ -2209,7 +2291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -176, y: 91}
+  m_AnchoredPosition: {x: -176, y: 85}
   m_SizeDelta: {x: 121, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1250392694
@@ -3539,7 +3621,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 147, y: 65}
+  m_AnchoredPosition: {x: 160, y: 74}
   m_SizeDelta: {x: 338.3563, y: 104.2673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1992252237
@@ -3562,8 +3644,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "PROGRAMERS:\nNacho Porras (aka Rapoporras)\nTeresa Rodr\xEDguez (itsTeresa)\nOtha
-    Scarlet"
+  m_text: 'PROGRAMERS:
+
+    Nacho Porras (aka Rapoporras)
+
+    Teresa Rodriguez (itsTeresa)
+
+    Otha
+    Scarlet'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
   m_sharedMaterial: {fileID: 1340960239404896116, guid: af0c885e07da1b94bb7ad5dd1d2f2c0b, type: 2}
@@ -3675,7 +3763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -176, y: 91}
+  m_AnchoredPosition: {x: -160, y: 80}
   m_SizeDelta: {x: 121, y: 58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075432312
@@ -3806,7 +3894,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: -88}
+  m_AnchoredPosition: {x: 64, y: -60}
   m_SizeDelta: {x: 193.6735, y: 60.5375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2084466837
