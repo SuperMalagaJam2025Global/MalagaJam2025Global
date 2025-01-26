@@ -2722,6 +2722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817339861}
+  - component: {fileID: 817339862}
   m_Layer: 0
   m_Name: fishBank
   m_TagString: Untagged
@@ -2784,6 +2785,21 @@ Transform:
   - {fileID: 1176914972}
   m_Father: {fileID: 1153980917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817339862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817339860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d3c2c9a9e6b1a4e8b8ac40dc14a93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.8
+  time: 4
+  timeloop: 4
 --- !u!1 &849896481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2811,7 @@ GameObject:
   - component: {fileID: 849896482}
   - component: {fileID: 849896484}
   - component: {fileID: 849896483}
+  - component: {fileID: 849896485}
   m_Layer: 0
   m_Name: SquidSprite
   m_TagString: Enemy
@@ -2890,6 +2907,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &849896485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849896481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d3c2c9a9e6b1a4e8b8ac40dc14a93c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  time: 4
+  timeloop: 4
 --- !u!1 &919257764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4308,7 +4340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153980914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20d3c2c9a9e6b1a4e8b8ac40dc14a93c, type: 3}
   m_Name: 
@@ -6664,13 +6696,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 6172319110126498786, guid: 9aa8a963003646147a8044600e6231a3, type: 3}
-  - {fileID: 6380710194806198644, guid: b6ec359a7edff5b4486b9e9e400d1d85, type: 3}
-  - {fileID: 9130363934552623261, guid: b866c04a6debf154d845e1f22800b1f4, type: 3}
-  - {fileID: 8976496982845821185, guid: 16bb4cecfd1a4604bbcaf72d5409b180, type: 3}
-  - {fileID: 8116092287877746587, guid: 623ef47872a2eeb4eb78c46702009b02, type: 3}
   - {fileID: 2911560706581719432, guid: 4adefddf272bb6a44a8f5a8b0d9bbf60, type: 3}
+  - {fileID: 6380710194806198644, guid: b6ec359a7edff5b4486b9e9e400d1d85, type: 3}
+  - {fileID: 5549709425924300267, guid: 04d38794bfde86749a5215e98a063244, type: 3}
+  - {fileID: 9130363934552623261, guid: b866c04a6debf154d845e1f22800b1f4, type: 3}
+  - {fileID: 8116092287877746587, guid: 623ef47872a2eeb4eb78c46702009b02, type: 3}
   - {fileID: 6141926767313068514, guid: 1315726d8b1fb8845b9b2456dd6dc9ba, type: 3}
+  - {fileID: 5063370338482731052, guid: 828a2dab88c2b29488cb1ba0eaf62a98, type: 3}
   - {fileID: 7165599585303805132, guid: a3324f05699c1fa40b78691f56d9ff38, type: 3}
+  - {fileID: 8976496982845821185, guid: 16bb4cecfd1a4604bbcaf72d5409b180, type: 3}
   - {fileID: 8703449119962902247, guid: 1ed54045b2ca0de4fbd32f03897e8864, type: 3}
   spawnTime: 2
   spawnFrequency: 6

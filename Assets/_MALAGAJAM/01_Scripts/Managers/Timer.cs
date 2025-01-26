@@ -7,7 +7,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private float playerAirTimer;   // duration of the game scene
     [SerializeField] float timeLeft;
     private bool isTimerActive;
-
+    [SerializeField]
+    private GameObject pompa;
     private void Awake()
     {
         timerInstance = this;
@@ -41,5 +42,6 @@ public class Timer : MonoBehaviour
     {
         isTimerActive = true;    // enable timer
         timeLeft = playerAirTimer;    // initialize timer
+        // pompa.GetComponent<BubbleAnimation>().ResetBubble();
     }
 }
