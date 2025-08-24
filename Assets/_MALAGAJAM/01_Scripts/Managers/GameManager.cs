@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGamePaused && !isGameOver)
         {
-            // SoundTrigger.PlayCustomAudioEvent(ESFXType.Pause);
+            SoundTrigger.PlayCustomAudioEvent(ESFXType.Pause);
             isGamePaused = true;
             StartCoroutine(StopGameAfterMenuAnimation());
             UIManager.uiManagerInstance.ShowPauseMenuUI();
